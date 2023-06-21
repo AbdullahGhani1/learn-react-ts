@@ -13,6 +13,8 @@ function ListGroup() {
   ];
   return (
     <>
+      <h1 className="text-center">Cities</h1>
+      {items.length === 0 && <p>No Cities Founds</p>}
       <ul className="list-group">
         {items.map((item, index) => {
           return (
