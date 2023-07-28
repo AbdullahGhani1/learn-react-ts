@@ -1,22 +1,15 @@
-import React, { MouseEvent, useState } from "react";
-
-function ListGroup() {
-  const items = [
-    "Lahore",
-    "Islamabad",
-    "Karachi",
-    "Peshawar",
-    "Quetta",
-    "Sialkot",
-    "Multan",
-    "Gujranwala",
-    "Bahawalpur",
-    "Faisalabad",
-  ];
-  const [selectedIndex, setSelectedIndex] = useState(-1);
+import React from 'react';
+interface Props {
+  items: string[];
+  heading: string;
+}
+function ListGroup(props: Props) {
+  const { items, heading } = props;
+  const [selectedIndex, setSelectedIndex] = React.useState(-1);
   return (
-    <>
-      <h1 className="text-center">Cities</h1>
+    <React.Fragment>
+      <h1 className="text-center">{heading}</h1>
+
       {items.length === 0 && <p>No Cities Founds</p>}
       <ul className="list-group">
         {items.map((item, index) => {
@@ -25,8 +18,8 @@ function ListGroup() {
               key={index}
               className={
                 selectedIndex === index
-                  ? "list-group-item active"
-                  : "list-group-item"
+                  ? `list-group-item active`
+                  : `list-group-item`
               }
               onClick={() => setSelectedIndex(index)}
             >
@@ -35,7 +28,7 @@ function ListGroup() {
           );
         })}
       </ul>
-    </>
+    </React.Fragment>
   );
 }
 
