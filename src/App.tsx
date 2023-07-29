@@ -18,7 +18,14 @@ function App() {
   return (
     <>
       <Button children="Data" color="danger" />
-      <Alert children={alertText} show={isShowing} handleAlert={handleAlert} />
+      {isShowing && (
+        <Alert
+          children={alertText}
+          show={isShowing}
+          handleAlert={handleAlert}
+        />
+      )}
+
       <ListGroup
         items={cities}
         heading={'Punjab Cities'}
