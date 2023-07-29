@@ -1,12 +1,22 @@
 import './App.css';
+import Alert from './components/Alert';
+import Button from './components/Button';
 import ListGroup from './components/ListGroup';
-import { cities, fruits } from './data/listData';
+import { cities } from './data/listData';
 
 function App() {
+  const handleSelectedItem = (item: string) => {
+    console.log(item);
+  };
   return (
     <>
-      <ListGroup items={cities} heading={'Punjab Cities'} />
-      <ListGroup items={fruits} heading={'Fruits'} />
+      <Alert>String</Alert>
+      <Button children="Data" />
+      <ListGroup
+        items={cities}
+        heading={'Punjab Cities'}
+        onSelectItem={handleSelectedItem}
+      />
     </>
   );
 }
