@@ -1,4 +1,5 @@
 import React from 'react';
+import Like from './Like';
 interface Props {
   items: string[];
   heading: string;
@@ -27,7 +28,10 @@ function ListGroup(props: Props) {
                 onSelectItem(item);
               }}
             >
-              {item}
+              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                {item}
+                <Like />
+              </div>
             </li>
           );
         })}
