@@ -8,6 +8,7 @@ import { cities } from './data/listData';
 import Bugs from './components/Bugs';
 import ExpandableText from './components/ExpandableText';
 import Navbar from './components/Navbar';
+import Form from './components/Form';
 
 function App() {
   const [isShowing, setIsShowing] = useState(false);
@@ -38,7 +39,7 @@ function App() {
         </ExpandableText>
         <UpdatingObject />
         <Bugs />
-
+        <Form />
         {/* <Button children="Data" color="danger" /> */}
         {isShowing && (
           <Alert

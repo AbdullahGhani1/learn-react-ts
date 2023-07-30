@@ -35,6 +35,7 @@ const Navbar = () => {
             <NavItems title="UpdatingObject" href="#updatingObject" />
             <NavItems title="Bugs" href="#bugs" />
             <NavItems title="ExpandableText" href="#expandableText" />
+            <NavItems title="Form" href="#form" />
           </ul>
           <div className="position-relative">
             <AiOutlineShoppingCart color="#fff" size="30" />
