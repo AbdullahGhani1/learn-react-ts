@@ -1,25 +1,26 @@
-import React, { ForwardedRef } from 'react';
+import { ChangeEvent } from 'react';
 
 interface Props {
   label?: string;
   type?: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  value: string | number;
 }
-const FormItem = React.forwardRef<HTMLInputElement, Props>(
-  (props: Props, ref: ForwardedRef<HTMLInputElement>) => {
-    const { label, type = 'text' } = props;
-    return (
-      <div className="mb-3">
-        <label htmlFor={type.toLowerCase()} className="form-label">
-          {label}
-        </label>
-        <input
-          ref={ref}
-          type={type}
-          id={type.toLowerCase()}
-          className="form-control"
-        />
-      </div>
-    );
-  }
-);
+const FormItem = (props: Props) => {
+  const { label, type = 'text', onChange, value } = props;
+  return (
+    <div className="mb-3">
+      <label htmlFor={type.toLowerCase()} className="form-label">
+        {label}
+      </label>
+      <input
+        type={type}
+        id={type.toLowerCase()}
+        className="form-control"
+        value={value}
+        onChange={onChange}
+      />
+    </div>
+  );
+};
 export default FormItem;
