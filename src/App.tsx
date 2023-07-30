@@ -5,6 +5,7 @@ import Alert from './components/Alert';
 import UpdatingObject from './components/UpdatingObject';
 import ListGroup from './components/ListGroup';
 import { cities } from './data/listData';
+import Bugs from './components/Bugs';
 
 function App() {
   const [isShowing, setIsShowing] = useState(false);
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
       <UpdatingObject />
+      <Bugs />
       {/* <Button children="Data" color="danger" /> */}
       {isShowing && (
         <Alert
