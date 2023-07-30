@@ -18,7 +18,7 @@ const Form = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
@@ -63,7 +63,12 @@ const Form = () => {
         value={person.age}
       /> */}
 
-      <input className="btn btn-primary" type="submit" title="Submit" />
+      <input
+        disabled={!isValid}
+        className="btn btn-primary"
+        type="submit"
+        title="Submit"
+      />
     </form>
   );
 };
