@@ -35,6 +35,13 @@ const UpdatingObject = () => {
         className="card card-body bg-light mt-5 mx-5 col-md-4"
         id="updatingObject"
       >
+        {Object.entries(drink).map(([key, value]) => {
+          return (
+            <p key={key}>
+              {key}: {value}
+            </p>
+          );
+        })}
         <button className="btn btn-warning" onClick={handleObject}>
           Update Objects
         </button>
