@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import './App.css';
 import Alert from './components/Alert';
-import Button from './components/Button';
+// import Button from './components/Button';/
+import UpdatingObject from './components/UpdatingObject';
 import ListGroup from './components/ListGroup';
 import { cities } from './data/listData';
 
@@ -17,7 +18,8 @@ function App() {
   };
   return (
     <>
-      <Button children="Data" color="danger" />
+      <UpdatingObject />
+      {/* <Button children="Data" color="danger" /> */}
       {isShowing && (
         <Alert
           children={alertText}
