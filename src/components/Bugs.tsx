@@ -15,7 +15,7 @@ const Bugs = () => {
     );
   };
   return (
-    <div className="row">
+    <div className="row" id="bugs">
       {bugs.map((bug) => {
         return (
           <div className="col-md-4" key={bug.id}>

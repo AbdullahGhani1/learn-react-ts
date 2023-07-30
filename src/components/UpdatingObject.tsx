@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Button from './Button';
 const UpdatingObject = () => {
   const [drink, setDrink] = useState({
     title: 'Sprite',
@@ -29,18 +30,26 @@ const UpdatingObject = () => {
     });
   };
   return (
-    <div className="card card-body bg-light mt-5 mx-5">
-      <button className="btn btn-warning" onClick={handleObject}>
-        Update Objects
-      </button>
-      {tags.map((tag, index) => {
-        return <p key={index}>{tag}</p>;
-      })}
-
-      <p></p>
-      <button className="btn btn-warning" onClick={handleArray}>
-        Update Array
-      </button>
+    <div className="row">
+      <div
+        className="card card-body bg-light mt-5 mx-5 col-md-4"
+        id="updatingObject"
+      >
+        <button className="btn btn-warning" onClick={handleObject}>
+          Update Objects
+        </button>
+      </div>
+      <div
+        className="card card-body bg-light mt-5 mx-5 col-md-4"
+        id="updatingObject"
+      >
+        {tags.map((tag, index) => {
+          return <p key={index}>{tag}</p>;
+        })}
+        <Button color="danger" onClick={handleArray}>
+          Update Array
+        </Button>
+      </div>
     </div>
   );
 };

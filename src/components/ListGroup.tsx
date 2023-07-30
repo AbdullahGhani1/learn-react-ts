@@ -10,7 +10,9 @@ function ListGroup(props: Props) {
   const [selectedIndex, setSelectedIndex] = React.useState(-1);
   return (
     <React.Fragment>
-      <h1 className="text-center">{heading}</h1>
+      <h1 id="listGroup" className="text-center">
+        {heading}
+      </h1>
 
       {items.length === 0 && <p>No Cities Founds</p>}
       <ul className="list-group">
