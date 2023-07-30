@@ -5,7 +5,6 @@ import NavItems from './NavItems';
 const Navbar = () => {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const cartItems = 5; // replace 5 with your actual cart items count
-
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-5">
       <div className="container-fluid">

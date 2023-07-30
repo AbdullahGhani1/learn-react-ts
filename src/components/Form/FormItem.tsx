@@ -7,6 +7,8 @@ interface Props {
   value: string | number;
 }
 const FormItem = (props: Props) => {
+  console.log(props);
+
   const { label, type = 'text', onChange, value } = props;
   return (
     <div className="mb-3">
@@ -18,7 +20,7 @@ const FormItem = (props: Props) => {
         id={type.toLowerCase()}
         className="form-control"
         value={value}
-        onChange={onChange}
+        onChange={props.onChange}
       />
     </div>
   );
