@@ -11,6 +11,7 @@ import Navbar from './components/Navbar';
 import Form from './components/Form';
 import ExpenseList from './components/expense-tracker/ExpenseList';
 import ExpenseFilter from './components/expense-tracker/ExpenseFilter';
+import ExpenseForm from './components/expense-tracker/ExpenseForm';
 
 function App() {
   const [isShowing, setIsShowing] = useState(false);
@@ -94,6 +95,16 @@ function App() {
           heading={'Punjab Cities'}
           onSelectItem={handleSelectedItem}
         /> */}
+        <section className="mb-5">
+          <ExpenseForm
+            onSubmit={(expense) => {
+              setExpenses([
+                ...expenses,
+                { ...expense, id: expenses.length + 1 },
+              ]);
+            }}
+          />
+        </section>
         <section className="mb-4">
           <ExpenseFilter
             onSelectCategory={(category) => SetselectedCategory(category)}
