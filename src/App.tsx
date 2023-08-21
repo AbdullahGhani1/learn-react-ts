@@ -10,6 +10,7 @@ import ExpandableText from './components/ExpandableText';
 import Navbar from './components/Navbar';
 import Form from './components/Form';
 import ExpenseList from './components/expense-tracker/ExpenseList';
+import ExpenseFilter from './components/expense-tracker/ExpenseFilter';
 
 function App() {
   const [isShowing, setIsShowing] = useState(false);
@@ -22,6 +23,7 @@ function App() {
     setIsShowing(false);
   };
 
+  const [selectedCategory, SetselectedCategory] = useState('');
   const [expenses, setExpenses] = useState([
     { id: 1, description: 'Rent', amount: 2500, category: 'Housing' },
     { id: 2, description: 'Groceries', amount: 300, category: 'Food' },
@@ -92,8 +94,19 @@ function App() {
           heading={'Punjab Cities'}
           onSelectItem={handleSelectedItem}
         /> */}
+        <section className="mb-4">
+          <ExpenseFilter
+            onSelectCategory={(category) => SetselectedCategory(category)}
+          />
+        </section>
         <ExpenseList
-          expenses={expenses}
+          expenses={
+            selectedCategory
+              ? expenses.filter(
+                  (expense) => expense.category === selectedCategory
+                )
+              : expenses
+          }
           onDelete={(id) => {
             setExpenses(expenses.filter((expense) => expense.id !== id));
             console.log(expenses[1], id);
